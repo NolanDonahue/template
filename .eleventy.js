@@ -9,9 +9,9 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
   eleventyConfig.addFilter("copyrightDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj)
-      .toLocaleString(DateTime.DATE_SHORT)
-      .toFormat("yyyy");
+    var d = DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_SHORT);
+    d.toFormat("yyyy");
+    return d;
   });
 
   return {
